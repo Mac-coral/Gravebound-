@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     
-    public Dictionary<Object, InventoryItem> itemDic= new Dictionary<Object, InventoryItem>();
+    public Dictionary<ItemObject, InventoryItem> itemDic= new Dictionary<ItemObject, InventoryItem>();
     public List <InventoryItem> inventory = new List<InventoryItem>();
 
-    public void AddtoInventory(Object objectData)
+    public void AddtoInventory(ItemObject objectData)
     { 
         if(itemDic.TryGetValue(objectData, out InventoryItem value))
         {
@@ -22,7 +22,7 @@ public class InventoryManager : MonoBehaviour
             itemDic.Add(objectData, newItem);
         }
     }
-    public void RemovefromInventory(Object objectData)
+    public void RemovefromInventory(ItemObject objectData)
     {
         if(itemDic.TryGetValue(objectData,out InventoryItem value))
         {
@@ -34,7 +34,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
-    public InventoryItem Get(Object objectData)
+    public InventoryItem Get(ItemObject objectData)
     {
         if(itemDic.TryGetValue(objectData, out InventoryItem value))
         {
@@ -47,14 +47,14 @@ public class InventoryManager : MonoBehaviour
 
 public class InventoryItem
 {
-    public Object data;
+    public ItemObject data;
     public int stackSize;
-    public string name;
+    public string itemName;
 
-    public InventoryItem(Object item)
+    public InventoryItem(ItemObject item)
     {
         data = item;
-        data.name = name;
+        itemName = data.itemName;
         AddStack();
     }
     public void AddStack()

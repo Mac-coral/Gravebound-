@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "Object", menuName = "Scriptable Object/Object")]
-public class Object : ScriptableObject
+[CreateAssetMenu(fileName = "ItemObject", menuName = "Scriptable Object/Item Object")]
+public class ItemObject : ScriptableObject
 {
-    public string name;
+    public string itemName;
     public string description;
     public Sprite icon;
     public GameObject prefab;

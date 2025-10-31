@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public Object obj_data;
+    public ItemObject obj_data;
     public InventoryManager inventory;
 
 
