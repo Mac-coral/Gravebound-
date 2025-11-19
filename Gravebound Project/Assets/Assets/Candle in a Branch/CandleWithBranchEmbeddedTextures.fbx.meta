@@ -1,44 +1,9 @@
 fileFormatVersion: 2
-guid: 1907b7d460648b54087782b7289416a6
+guid: fcd74deec2566d44f839d618c3220c2e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cassette2Material
-    second: {fileID: 2100000, guid: 02dc2776edfbc2644b2d681b9f8f4777, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cassette3Material
-    second: {fileID: 2100000, guid: 16f6161d9dde1ed44aa235e221c6c5ec, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cassette4Material
-    second: {fileID: 2100000, guid: 9c9ac5b30d30cb84da3a79954b66c6a8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cassette5Material
-    second: {fileID: 2100000, guid: df2d438ebc22cc34d8a1e0f8681f09f8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CassetteMaterial
-    second: {fileID: 2100000, guid: 5c86b91a90792374ba8b225ec1c19314, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CassettePlayerMaterial
-    second: {fileID: 2100000, guid: 70157d16ecb11164f8863ce3822bacfa, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CoverMaterial
-    second: {fileID: 2100000, guid: 666173adf56991d43a220eaa907d4dd2, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
