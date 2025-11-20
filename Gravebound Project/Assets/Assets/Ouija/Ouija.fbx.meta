@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fcd74deec2566d44f839d618c3220c2e
+guid: a36d8a832c697884eb29a93604eafa8f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Candle
-    second: {fileID: 2100000, guid: 2cfda33c11aba9a448a8192448387434, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: e9626101d46d6214281fd099a9417049, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.001
-    second: {fileID: 2100000, guid: 6accec88882efc849812b9ebe039049e, type: 2}
+    second: {fileID: 2100000, guid: c0ff643613035bf4e8996b2c950c3972, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 30ab8b81244bc4b4aa8d112d976e3554, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

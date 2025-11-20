@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fcd74deec2566d44f839d618c3220c2e
+guid: b35ab3734a910c144b26c31857f71abb
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Candle
-    second: {fileID: 2100000, guid: 2cfda33c11aba9a448a8192448387434, type: 2}
+      name: Dirt
+    second: {fileID: 2100000, guid: e7c7c68b1ebd43545a18539df3b1204e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 6accec88882efc849812b9ebe039049e, type: 2}
+      name: Grass
+    second: {fileID: 2100000, guid: edc483dd2cf8ffe42abd706cc18252d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock1
+    second: {fileID: 2100000, guid: eabc0608ecfefdf4eb9901aedb5e5063, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock2
+    second: {fileID: 2100000, guid: 38e876ca97ceb0b438a4f643a84fe2c7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
