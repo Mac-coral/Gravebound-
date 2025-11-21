@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: fcd74deec2566d44f839d618c3220c2e
+guid: 1eb91f7b097fa154fb3f9a1cc8d62b28
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Branch
+    second: {fileID: 2100000, guid: 6accec88882efc849812b9ebe039049e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -12,8 +17,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 6accec88882efc849812b9ebe039049e, type: 2}
+      name: Wick
+    second: {fileID: 2100000, guid: 4fed5e4dd0a6e95488591195a8d5f7fa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4560955257471032933
+--- !u!114 &-7857749879405286514
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23,7 +23,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BranchMat
+  m_Name: WickMat
   m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -53,7 +53,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: f876cd7b483b55a4b953c8ca80a5f4d3, type: 3}
+        m_Texture: {fileID: 2800000, guid: aa99949b8e7e69d43ab3f6470dc1ac31, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -89,15 +89,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f876cd7b483b55a4b953c8ca80a5f4d3, type: 3}
+        m_Texture: {fileID: 2800000, guid: aa99949b8e7e69d43ab3f6470dc1ac31, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
-        m_Texture: {fileID: 2800000, guid: ef9a641409259e84ba8ca452a592919a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2c0189cfbab3e77428aba236815d1de3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 5087ce5c89d5c6f409f61c4dca9f3ab6, type: 3}
+        m_Texture: {fileID: 2800000, guid: f357939849675eb409ec9ac2f1ea2f47, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:
