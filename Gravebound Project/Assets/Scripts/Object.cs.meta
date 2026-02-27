@@ -5,7 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - icon: {instanceID: 0}
-  - prefab: {fileID: 3929431434569584805, guid: 4c975e9d386a7d14098ff9aa350149bf, type: 3}
+  - prefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

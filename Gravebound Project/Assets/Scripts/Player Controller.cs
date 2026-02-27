@@ -1,7 +1,8 @@
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour 
-{ 
+{
+    public InventoryManager inventory;
     public float Obj_Distance; 
     public float maxDistance; 
 
@@ -20,17 +21,20 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonDown("Interact")) 
         { 
             Ray clickPoint = Camera.main.ScreenPointToRay(Input.mousePosition); 
-            RaycastHit touch; 
+            RaycastHit touch;
             if (Physics.Raycast(clickPoint, out touch, maxDistance, inventItem)) 
             { 
                 Obj_Distance = touch.distance; 
-                Item item = touch.collider.gameObject.GetComponent<Item>(); 
-                Debug.Log("Touched!"); item.PickUp();
+                Item item = touch.collider.gameObject.GetComponent<Item>();
+                inventory.AddItem(item.item);
+                Destroy(item.gameObject);
+                Debug.Log("Item picked up "+ item.name); 
 
-                if (cassettePlayer != null && item.CompareTag("Cassette"))
-                {
-                    cassettePlayer.InsertCassette(item.obj_data);
-                }
+
+               if (cassettePlayer != null && item.CompareTag("Cassette Tape"))
+               {
+                    cassettePlayer.InsertCassette(item);
+               }
             } 
         } 
     } 

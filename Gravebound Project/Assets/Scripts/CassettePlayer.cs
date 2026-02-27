@@ -3,7 +3,7 @@ using UnityEngine;
 public class CassettePlayer : MonoBehaviour
 {
     [Header("Cassette Settings")]
-    public ItemObject[] cassetteItems;
+    public Item[] cassetteItems;
     private int insertedCassettes = 0;
 
     [Header("Maze Gate Settings")]
@@ -11,7 +11,7 @@ public class CassettePlayer : MonoBehaviour
 
     private bool isGateOpened = false;
 
-    public void InsertCassette(ItemObject cassette)
+    public void InsertCassette(Item cassette)
     {
         for (int i = 0; i < cassetteItems.Length; i++)
         {
