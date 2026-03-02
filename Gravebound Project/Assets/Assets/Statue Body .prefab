@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4838719077570775547}
   m_Layer: 0
   m_Name: 'Statue Body '
-  m_TagString: Untagged
+  m_TagString: Select
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

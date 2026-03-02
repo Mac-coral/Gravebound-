@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e2ac81ccf3feb9478a2b0f505269f2e, type: 3}
-  m_Name: Cassette Player
+  m_Name: Cassette 1
   m_EditorClassIdentifier: 
-  id: 0
-  itemName: Cassette Player
-  type: 2
+  id: 1
+  itemName: Cassette 1
+  type: 3
   description: 
-  prefab: {fileID: 8745510874600419603, guid: f0a13497e0e267a4eac3221ebdbd0511, type: 3}
+  prefab: {fileID: 4115617559643835937, guid: 5884aa8fd984acc418ab9417b4143272, type: 3}
   itemImage: {fileID: 0}

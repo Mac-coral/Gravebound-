@@ -7,14 +7,18 @@ using TMPro;
 public class InventoryMenu : MonoBehaviour
 {
     bool isOpen;
-    public GameObject inventPrefab;
+    public GameObject Player;
     public Canvas inventoryMenu;
-    public InventoryManager inventory;
-    List<InventoryItem> itemsDisplay = new List<InventoryItem>();
+    public InventoryManage inventory;
+    public Image[] slots;
+    GameObject currentSelect;
+    public List<ItemObject> itemsDisplay;
+    int selected;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         isOpen = false;
+        inventory = Player.GetComponent<InventoryManage>();
     }
 
     // Update is called once per frame
@@ -33,6 +37,7 @@ public class InventoryMenu : MonoBehaviour
                 isOpen = true;
             }
         }
+        //selection();
         UpdateDisplay();
     }
 
@@ -55,21 +60,22 @@ public class InventoryMenu : MonoBehaviour
 
     void Display()
     {
-        int length = inventory.slots.Length;
+        int length = slots.Length;
         for(int i = 0; i < length; i++)
         {
-            inventory.slots[i].GetComponentInChildren<TMP_Text>().text = inventory.Tupperware[i].item.name.ToString();
+            slots[i].GetComponentInChildren<TMP_Text>().text = inventory.Tupperware[i].name.ToString();
         }
     }
 
     void UpdateDisplay()
     {
+        //itemsDisplay = inventory.returnInventory();
         for (int i = 0; i < inventory.Tupperware.Count; i++)
         {
             int tupperitems = inventory.Tupperware.Count;
-            if (itemsDisplay[i] != null)
+            if (itemsDisplay[i] != null && i > tupperitems)
             {
-                inventory.slots[i].GetComponentInChildren<TMP_Text>().text = inventory.Tupperware[i].item.name.ToString();
+                slots[i].GetComponentInChildren<TMP_Text>().text = inventory.Tupperware[i].name.ToString();
             }
             else
             {
@@ -77,5 +83,18 @@ public class InventoryMenu : MonoBehaviour
             }
         }
     }
-    
+ /*   
+    public void selection()
+    {
+        if (selected > itemsDisplay.Count - 1)
+        {
+            selected = 0;
+        }
+        if (selected < 0)
+        {
+            selected = itemsDisplay.Count - 1;
+        }
+        currentSelect = itemsDisplay[selected].prefab;
+    }
+ */
 }
