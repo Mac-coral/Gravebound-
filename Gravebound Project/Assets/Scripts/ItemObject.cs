@@ -3,13 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum itemType
-{
-    Weapons,
-    puzzlePiece,
-    Default,
-    cassetteTape
-}
 [CreateAssetMenu(fileName = "Item", menuName = "Inventory System/Items")]
 public class ItemObject : ScriptableObject
 {
@@ -20,4 +13,12 @@ public class ItemObject : ScriptableObject
     public string description;
     public GameObject prefab;
     public Image itemImage;
+
+    public enum itemType
+    {
+        Weapons,
+        puzzlePiece,
+        Default,
+        cassetteTape
+    }
 }

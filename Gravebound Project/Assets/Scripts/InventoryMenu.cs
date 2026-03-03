@@ -4,21 +4,27 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class InventoryMenu : MonoBehaviour
 {
     bool isOpen;
     public GameObject Player;
-    public Canvas inventoryMenu;
+    public GameObject inventoryMenu;
     public InventoryManage inventory;
     public Image[] slots;
     GameObject currentSelect;
     public List<ItemObject> itemsDisplay;
     int selected;
+
+
+    GameObject slot;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         isOpen = false;
         inventory = Player.GetComponent<InventoryManage>();
+        itemsDisplay = new List<ItemObject>(inventory.Tupperware);
     }
 
     // Update is called once per frame
@@ -38,12 +44,11 @@ public class InventoryMenu : MonoBehaviour
             }
         }
         //selection();
-        UpdateDisplay();
     }
 
     void enableInventory()
     {
-        inventoryMenu.enabled = true;
+        inventoryMenu.SetActive(true);
         Time.timeScale = 0.0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -52,7 +57,7 @@ public class InventoryMenu : MonoBehaviour
 
     void disableInventory()
     {
-        inventoryMenu.enabled = false;
+        inventoryMenu.SetActive(false);
         Time.timeScale = 1.0f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -60,41 +65,32 @@ public class InventoryMenu : MonoBehaviour
 
     void Display()
     {
-        int length = slots.Length;
-        for(int i = 0; i < length; i++)
-        {
-            slots[i].GetComponentInChildren<TMP_Text>().text = inventory.Tupperware[i].name.ToString();
-        }
-    }
-
-    void UpdateDisplay()
-    {
-        //itemsDisplay = inventory.returnInventory();
-        for (int i = 0; i < inventory.Tupperware.Count; i++)
+        for (int i = 0; i < itemsDisplay.Count; i++)
         {
             int tupperitems = inventory.Tupperware.Count;
-            if (itemsDisplay[i] != null && i > tupperitems)
+            if (itemsDisplay[i] != null && i <= tupperitems)
             {
-                slots[i].GetComponentInChildren<TMP_Text>().text = inventory.Tupperware[i].name.ToString();
+                slots[i].GetComponentInChildren<TMP_Text>().text = itemsDisplay[i].itemName.ToString();
             }
             else
             {
                 itemsDisplay.Add(inventory.Tupperware[i]);
             }
         }
+
+        /*   
+           public void selection()
+           {
+               if (selected > itemsDisplay.Count - 1)
+               {
+                   selected = 0;
+               }
+               if (selected < 0)
+               {
+                   selected = itemsDisplay.Count - 1;
+               }
+               currentSelect = itemsDisplay[selected].prefab;
+           }
+        */
     }
- /*   
-    public void selection()
-    {
-        if (selected > itemsDisplay.Count - 1)
-        {
-            selected = 0;
-        }
-        if (selected < 0)
-        {
-            selected = itemsDisplay.Count - 1;
-        }
-        currentSelect = itemsDisplay[selected].prefab;
-    }
- */
 }

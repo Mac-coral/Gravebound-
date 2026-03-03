@@ -3,14 +3,13 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    public Canvas pauseMenu;
-    public Canvas settingMenu;
+    public GameObject pauseMenu;
+    public GameObject settingMenu;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        pauseMenu.enabled = false;
-        settingMenu.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -24,7 +23,7 @@ public class PauseMenu : MonoBehaviour
 
     public void enablePause()
     {
-        pauseMenu.enabled = true;
+        pauseMenu.SetActive(true);
         Time.timeScale = 0.0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -32,7 +31,7 @@ public class PauseMenu : MonoBehaviour
 
     public void disablePause()
     {
-        pauseMenu.enabled = false;
+        pauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -40,13 +39,13 @@ public class PauseMenu : MonoBehaviour
 
     public void enableSettings()
     {
-        settingMenu.enabled = true;
+        settingMenu.SetActive(true);
         Time.timeScale = 0.0f;
     }
 
     public void disableSettings()
     {
-        settingMenu.enabled = false;
+        settingMenu.SetActive(false);
         Time.timeScale = 0.0f;
     }
 

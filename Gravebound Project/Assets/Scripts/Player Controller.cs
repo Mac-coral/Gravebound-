@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour 
 {
+
     public InventoryManage inventory;
     public InventoryMenu ui;
     public float Obj_Distance; 
@@ -20,11 +22,24 @@ public class PlayerController : MonoBehaviour
     private Transform selection;
     public Material highlighter;
 
-    public Image slot;
+    public Canvas InventUi;
+    public GraphicRaycaster uiRay;
+    public EventSystem eveSys;
+    PointerEventData pointEvent;
 
+    void Awake()
+    {
+        uiRay = InventUi.GetComponent<GraphicRaycaster>();
+        eveSys.GetComponent<EventSystem>();
+    }
     // Update is called once per frame
     void Update() 
     { 
+        if(highlight != null)
+        {
+            highlight.GetComponentInChildren<MeshRenderer>().material = ogMat;
+            highlight = null;
+        }
         Ray lookPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit looking;
         if(Physics.Raycast(lookPoint, out looking))
@@ -42,10 +57,6 @@ public class PlayerController : MonoBehaviour
             {
                 highlight = null;
             }
-            if (Physics.Raycast(lookPoint, out looking, inventUI))
-            {
-                //slot.GetComponent<Image>().color = new Color32(255, 255, 225, 15);
-            }
         }
         if (Input.GetButtonDown("Interact")) 
         { 
@@ -55,6 +66,7 @@ public class PlayerController : MonoBehaviour
             { 
                 Obj_Distance = touch.distance; 
                 Item _item = touch.collider.gameObject.GetComponent<Item>();
+                Debug.Log(_item.name);
                 inventory.AddItem(_item.item); //null error when object is clicked
                 Destroy(touch.collider.gameObject);
                 Debug.Log("Item picked up "+ _item.name); 
@@ -65,7 +77,23 @@ public class PlayerController : MonoBehaviour
                     cassettePlayer.InsertCassette(_item);
                }
                 */
-            } 
+            }
+
+            pointEvent = new PointerEventData(eveSys);
+            List<RaycastResult> results = new List<RaycastResult>();
+            pointEvent.position = Input.mousePosition;
+            uiRay.Raycast(pointEvent, results);
+
+            foreach(RaycastResult result in results)
+            {
+                GameObject ui_element = result.gameObject;
+                Debug.Log(ui_element.name);
+                if(ui_element.name == "Image")
+                {
+                    ui_element.GetComponent<Image>.color = new Color32(255,255, 255, 255);
+                }
+            }
+
         } 
     } 
 }

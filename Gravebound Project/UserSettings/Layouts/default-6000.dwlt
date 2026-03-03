@@ -547,9 +547,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 788d0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 0cfaffff
+      m_SelectedIDs: 12c50000
+      m_LastClickedID: 50450
+      m_ExpandedIDs: 7af8ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1125,9 +1125,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 332.5958, y: 397.47382, z: -622.4651}
+    m_Target: {x: 476.06946, y: 373.04913, z: -27.302036}
     speed: 2
-    m_Value: {x: 332.5958, y: 397.47382, z: -622.4651}
+    m_Value: {x: 476.06946, y: 373.04913, z: -27.302036}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1173,20 +1173,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.14577636, y: -0.16902445, z: 0.025287844, w: 0.9744321}
+    m_Target: {x: 0.07911093, y: -0.087360024, z: 0.006961984, w: 0.992999}
     speed: 2
-    m_Value: {x: 0.145778, y: -0.16902636, z: 0.02528813, w: 0.9744431}
+    m_Value: {x: 0.07911149, y: -0.08736064, z: 0.0069620335, w: 0.99300605}
   m_Size:
-    m_Target: 11.001173
+    m_Target: 64.517235
     speed: 2
-    m_Value: 11.001173
+    m_Value: 64.517235
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 2
-    m_SpeedNormalized: 1
+    m_Speed: 1.040481
+    m_SpeedNormalized: 0.52000046
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -1358,7 +1358,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1368,7 +1368,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\cjmoi\OneDrive\Documents\GitHub\Gravebound-\Gravebound
     Project
@@ -1376,9 +1376,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 6}
-    m_SelectedIDs: 9cc80000
-    m_LastClickedID: 51356
-    m_ExpandedIDs: 0000000014c8000000ca9a3b
+    m_SelectedIDs: c0c90000
+    m_LastClickedID: 51648
+    m_ExpandedIDs: 0000000018c9000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1407,7 +1407,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000014c80000
+    m_ExpandedIDs: 0000000018c90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1433,9 +1433,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 788d0000
-    m_LastClickedInstanceID: 36216
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 12c50000
+    m_LastClickedInstanceID: 50450
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000094f700006ef700006ef800008cf80000aaf80000e0f800009ac6000024c7000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1544,7 +1544,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 236
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
