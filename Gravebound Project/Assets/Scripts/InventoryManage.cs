@@ -9,6 +9,7 @@ public class InventoryManage : MonoBehaviour
 {
     public List<ItemObject> Tupperware = new List<ItemObject>();
     int InventIndex = 12;
+    public InventoryMenu uiMenu;
 
     public void AddItem(ItemObject _item)
     {
@@ -26,6 +27,7 @@ public class InventoryManage : MonoBehaviour
         if (!inInventory)
         {
             Tupperware.Add(_item);
+            uiMenu.Display();
             Debug.Log("Item is in inventory!");
         }
     }

@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float maxDistance; 
 
     public LayerMask inventItem;
-    public LayerMask inventUI;
+    public LayerMask puzzle;
 
     public CassettePlayer cassettePlayer;
 
@@ -22,16 +22,9 @@ public class PlayerController : MonoBehaviour
     private Transform selection;
     public Material highlighter;
 
-    public Canvas InventUi;
-    public GraphicRaycaster uiRay;
-    public EventSystem eveSys;
-    PointerEventData pointEvent;
+    public bool interact;
+    public StatueBody statue;
 
-    void Awake()
-    {
-        uiRay = InventUi.GetComponent<GraphicRaycaster>();
-        eveSys.GetComponent<EventSystem>();
-    }
     // Update is called once per frame
     void Update() 
     { 
@@ -63,7 +56,7 @@ public class PlayerController : MonoBehaviour
             Ray clickPoint = Camera.main.ScreenPointToRay(Input.mousePosition); 
             RaycastHit touch;
             if (Physics.Raycast(clickPoint, out touch, maxDistance, inventItem)) 
-            { 
+            {
                 Obj_Distance = touch.distance; 
                 Item _item = touch.collider.gameObject.GetComponent<Item>();
                 Debug.Log(_item.name);
@@ -78,19 +71,11 @@ public class PlayerController : MonoBehaviour
                }
                 */
             }
-
-            pointEvent = new PointerEventData(eveSys);
-            List<RaycastResult> results = new List<RaycastResult>();
-            pointEvent.position = Input.mousePosition;
-            uiRay.Raycast(pointEvent, results);
-
-            foreach(RaycastResult result in results)
+            if(Physics.Raycast(clickPoint, out touch, puzzle))
             {
-                GameObject ui_element = result.gameObject;
-                Debug.Log(ui_element.name);
-                if(ui_element.name == "Image")
+                if(statue.interact == true)
                 {
-                    ui_element.GetComponent<Image>.color = new Color32(255,255, 255, 255);
+                    statue.placement();
                 }
             }
 

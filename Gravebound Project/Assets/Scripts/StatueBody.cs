@@ -6,18 +6,21 @@ using UnityEngine.UI;
 
 public class StatueBody : MonoBehaviour
 {
-    /*
-    public InventoryManager playerInventory;
-    public Object data_info;
+    
+    public InventoryManage playerInventory;
     public GameObject player;
     public GameObject statueBody;
     public bool matchingPiece;
-    private Dictionary<ItemObject, InventoryItem> itemsList;
+    private List<ItemObject> itemsList;
+
+    public bool interact;
+
+    GameObject Head;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        itemsList = player.GetComponent<InventoryManager>().itemDic;
+        
     }
     
     // Update is called once per frame
@@ -32,10 +35,22 @@ public class StatueBody : MonoBehaviour
 
     void OnTriggerEnter(Collider otherCollider)
     {
+        Debug.Log("Can Interact");
+        itemsList = player.GetComponent<InventoryManage>().Tupperware;
         //search inventory for statue head, if so, alert player to place head on the statue
-        List<InventoryItem> playerItems = new List<InventoryItem>();
-        itemsList.Values.ToList();
-        Debug.Log("Player Items: " + playerItems);
+        for (int i = 0; i < itemsList.Count; i++)
+        {
+            string objName = itemsList[i].itemName;
+            if(objName == "Statue Head")
+            {
+                interact = true; break;
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider otherCollider)
+    {
+        interact = false;
     }
 
     void doorOpen()
@@ -45,12 +60,12 @@ public class StatueBody : MonoBehaviour
 
     void RightOrWrong()
     {
-        //checks item information to see if matching
+        //checks item information to see if matching (use id number)
     }
 
-    void placement()
+    public void placement()
     {
-        // take item from inventory and places it on top of statue
+        //
     }
-    */
+    
 }

@@ -11,13 +11,11 @@ public class InventoryMenu : MonoBehaviour
     public GameObject Player;
     public GameObject inventoryMenu;
     public InventoryManage inventory;
-    public Image[] slots;
+    public GameObject[] slots;
     GameObject currentSelect;
     public List<ItemObject> itemsDisplay;
-    int selected;
+    int selection;
 
-
-    GameObject slot;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -43,7 +41,7 @@ public class InventoryMenu : MonoBehaviour
                 isOpen = true;
             }
         }
-        //selection();
+        Display();
     }
 
     void enableInventory()
@@ -63,7 +61,7 @@ public class InventoryMenu : MonoBehaviour
         Cursor.visible = false;
     }
 
-    void Display()
+    public void Display()
     {
         for (int i = 0; i < itemsDisplay.Count; i++)
         {
@@ -78,19 +76,12 @@ public class InventoryMenu : MonoBehaviour
             }
         }
 
-        /*   
-           public void selection()
-           {
-               if (selected > itemsDisplay.Count - 1)
-               {
-                   selected = 0;
-               }
-               if (selected < 0)
-               {
-                   selected = itemsDisplay.Count - 1;
-               }
-               currentSelect = itemsDisplay[selected].prefab;
-           }
-        */
+    }
+    public void DeselectSlots()
+    {
+        for(int i = 0; i < slots.Length; i++)
+        {
+            slots[i].transform.GetChild(1).gameObject.SetActive(false);
+        }
     }
 }

@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform playerCamera;
+    public GameObject hand;
+    public GameObject Player;
 
     [Header("Movement Settings")]
     public float walkSpeed = 20f;
@@ -45,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         HandleMouseLook();
         HandleMovement();
         UpdateStamina();
+        HandPosition();
     }
 
     void HandleMouseLook()
@@ -95,6 +98,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (staminaBar != null)
             staminaBar.value = currentStamina;
+    }
+
+    void HandPosition()
+    {
+        hand.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
     }
 }
 
