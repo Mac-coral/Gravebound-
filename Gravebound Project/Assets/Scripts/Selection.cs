@@ -14,10 +14,11 @@ public class Selection : MonoBehaviour, IPointerClickHandler
     public GameObject equipItem;
     public GameObject unequipItem;
 
+    GameObject player;
     public GameObject hand;
-    GameObject selectedObject;
     GameObject selecterOn;
-    GameObject currentItem;
+    GameObject selectedObject;
+    public static GameObject currentItem;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -25,6 +26,12 @@ public class Selection : MonoBehaviour, IPointerClickHandler
         manager = GameObject.Find("Menus").GetComponent<InventoryMenu>();
         equipItem.GetComponent<Button>().enabled = false;
         hand = GameObject.Find("Player").transform.GetChild(2).gameObject;
+        player = GameObject.Find("Player");
+    }
+
+    void Update()
+    {
+        //Selection.currentItem;
     }
 
     public void OnPointerClick(PointerEventData ped)
@@ -66,22 +73,14 @@ public class Selection : MonoBehaviour, IPointerClickHandler
         Debug.Log(selectedObject.name);
         currentItem = Instantiate(selectedObject, hand.transform.position,Quaternion.identity);
         Debug.Log("Object in hand!");
+        //equipItems.Add(currentItem);
         isEquipped = true;
     }
     
     public void unequip()
     {
-        for (int i = 0; i < manager.slots.Length; i++)
-        {
-            bool isActive = manager.slots[i].gameObject.transform.GetChild(1).gameObject.activeSelf;
-            if (isActive == true)
-            {
-                selecterOn = manager.slots[i].gameObject.transform.GetChild(1).gameObject;
-                Debug.Log(selecterOn.name);
-                selectedObject = selecterOn;
-                selectedObject = manager.itemsDisplay[i].prefab;
-            }
-        }
-        Debug.Log(selectedObject.name);
+        Debug.Log(Selection.currentItem.name);
+        Destroy(Selection.currentItem);
+        Debug.Log("Item back in Inventory!");
     }
 }

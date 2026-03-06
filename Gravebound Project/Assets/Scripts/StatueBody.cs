@@ -12,15 +12,16 @@ public class StatueBody : MonoBehaviour
     public GameObject statueBody;
     public bool matchingPiece;
     private List<ItemObject> itemsList;
+    public Selection selector;
 
     public bool interact;
 
-    GameObject Head;
+    public GameObject Head;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
     
     // Update is called once per frame
@@ -43,7 +44,7 @@ public class StatueBody : MonoBehaviour
             string objName = itemsList[i].itemName;
             if(objName == "Statue Head")
             {
-                interact = true; break;
+                interact = true;
             }
         }
     }
@@ -65,7 +66,9 @@ public class StatueBody : MonoBehaviour
 
     public void placement()
     {
-        //
+        Debug.Log(Selection.currentItem);
+        Instantiate(Selection.currentItem, Head.transform.position, Quaternion.identity);
+        selector.unequip();
     }
     
 }

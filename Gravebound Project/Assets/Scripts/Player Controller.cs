@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     private Transform selection;
     public Material highlighter;
 
-    public bool interact;
     public StatueBody statue;
 
     // Update is called once per frame
@@ -60,22 +59,23 @@ public class PlayerController : MonoBehaviour
                 Obj_Distance = touch.distance; 
                 Item _item = touch.collider.gameObject.GetComponent<Item>();
                 Debug.Log(_item.name);
-                inventory.AddItem(_item.item); //null error when object is clicked
+                inventory.AddItem(_item.item); 
                 Destroy(touch.collider.gameObject);
                 Debug.Log("Item picked up "+ _item.name); 
 
-                /*
-               if (cassettePlayer != null && _item.item.itemName("Cassette Tape"))
+                
+               if (cassettePlayer != null && _item.item.itemName == "Cassette Tape")
                {
                     cassettePlayer.InsertCassette(_item);
                }
-                */
+                
             }
             if(Physics.Raycast(clickPoint, out touch, puzzle))
             {
                 if(statue.interact == true)
                 {
                     statue.placement();
+                    Debug.Log("placing head...");
                 }
             }
 

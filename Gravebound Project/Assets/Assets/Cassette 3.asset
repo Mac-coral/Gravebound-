@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cassette 3
   m_EditorClassIdentifier: 
   id: 3
-  itemName: Cassette 3
+  itemName: Cassette Tape
   type: 3
   description: 
   prefab: {fileID: 5614737158779827659, guid: 131485bc0b7be9f44a2df47f16b88a3d, type: 3}

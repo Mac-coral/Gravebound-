@@ -22,7 +22,6 @@ public class InventoryMenu : MonoBehaviour
     {
         isOpen = false;
         inventory = Player.GetComponent<InventoryManage>();
-        itemsDisplay = new List<ItemObject>(inventory.Tupperware);
     }
 
     // Update is called once per frame
@@ -63,6 +62,7 @@ public class InventoryMenu : MonoBehaviour
 
     public void Display()
     {
+        itemsDisplay = new List<ItemObject>(inventory.Tupperware);
         for (int i = 0; i < itemsDisplay.Count; i++)
         {
             int tupperitems = inventory.Tupperware.Count;

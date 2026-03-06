@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Head 1
   m_EditorClassIdentifier: 
   id: 6
-  itemName: Head 1
+  itemName: Statue Head
   type: 1
   description: 
   prefab: {fileID: 6205468303622459520, guid: 933f10955cc93764581cb0b5de02e76f, type: 3}

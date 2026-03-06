@@ -47,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
         HandleMouseLook();
         HandleMovement();
         UpdateStamina();
-        HandPosition();
     }
 
     void HandleMouseLook()
@@ -98,11 +97,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (staminaBar != null)
             staminaBar.value = currentStamina;
-    }
-
-    void HandPosition()
-    {
-        hand.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
     }
 }
 

@@ -13,7 +13,7 @@ public class InventoryManage : MonoBehaviour
 
     public void AddItem(ItemObject _item)
     {
-        bool inInventory = true;
+        bool inInventory = false;
         InventIndex = Tupperware.Count;
         for (int i = 0; i < InventIndex; i++)
         {
