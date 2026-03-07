@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform playerCamera;
+    public GameObject hand;
+    public GameObject Player;
 
     [Header("Movement Settings")]
     public float walkSpeed = 20f;

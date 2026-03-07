@@ -1,37 +1,85 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour 
-{ 
+{
+
+    public InventoryManage inventory;
+    public InventoryMenu ui;
     public float Obj_Distance; 
     public float maxDistance; 
 
     public LayerMask inventItem;
+    public LayerMask puzzle;
 
+    public GameObject cassettePlay;
     public CassettePlayer cassettePlayer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start() 
-    { 
 
-    } 
+    private Material ogMat;
+    private Transform highlight;
+    private Transform selection;
+    public Material highlighter;
+
+    public StatueBody statue;
 
     // Update is called once per frame
     void Update() 
     { 
-        if(Input.GetButtonDown("Interact")) 
+        if(highlight != null)
+        {
+            highlight.GetComponentInChildren<MeshRenderer>().material = ogMat;
+            highlight = null;
+        }
+        Ray lookPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit looking;
+        if(Physics.Raycast(lookPoint, out looking))
+        {
+            highlight = looking.transform;
+            if(highlight.CompareTag("Select") && highlight != selection)
+            {
+                if(highlight.GetComponentInChildren<MeshRenderer>().material != highlighter)
+                {
+                    ogMat = highlight.GetComponentInChildren<MeshRenderer>().material;
+                    highlight.GetComponentInChildren<MeshRenderer>().material = highlighter;
+                }
+            }
+            else
+            {
+                highlight = null;
+            }
+        }
+        if (Input.GetButtonDown("Interact")) 
         { 
             Ray clickPoint = Camera.main.ScreenPointToRay(Input.mousePosition); 
-            RaycastHit touch; 
+            RaycastHit touch;
             if (Physics.Raycast(clickPoint, out touch, maxDistance, inventItem)) 
-            { 
+            {
                 Obj_Distance = touch.distance; 
-                Item item = touch.collider.gameObject.GetComponent<Item>(); 
-                Debug.Log("Touched!"); item.PickUp();
-
-                if (cassettePlayer != null && item.CompareTag("Cassette"))
+                Item _item = touch.collider.gameObject.GetComponent<Item>();
+                Debug.Log(_item.name);
+                inventory.AddItem(_item.item); 
+                Destroy(touch.collider.gameObject);
+                Debug.Log("Item picked up "+ _item.name); 
+                
+               if ( _item.item.itemName == "Cassette Tape")
+               {
+                    cassettePlayer.InsertCassette(_item);
+                    Debug.Log("Cassette Tape in!");
+               }
+                
+            }
+            if(Physics.Raycast(clickPoint, out touch, puzzle))
+            {
+                if(statue.interact == true)
                 {
-                    cassettePlayer.InsertCassette(item.obj_data);
+                    statue.placement();
+                    Debug.Log("placing head...");
                 }
-            } 
+            }
+
         } 
     } 
 }
