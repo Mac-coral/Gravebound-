@@ -13,25 +13,26 @@ public class StatueBody : MonoBehaviour
     public bool matchingPiece;
     private List<ItemObject> itemsList;
     public Selection selector;
+    public GameObject MazeDoor;
 
     public bool interact;
 
+    public static GameObject testingHead;
+
     public GameObject Head;
+
+    int matchingID = 9;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        testingHead = null;
     }
     
     // Update is called once per frame
     void Update()
     {
-        //check to see if the bool is true
-        if (matchingPiece)
-        {
-            doorOpen();
-        }
+
     }
 
     void OnTriggerEnter(Collider otherCollider)
@@ -56,19 +57,58 @@ public class StatueBody : MonoBehaviour
 
     void doorOpen()
     {
-        //if bool is true, trigger event
+        if (matchingPiece)
+        {
+            StartCoroutine(LowerGate());
+            Debug.Log("Lowering Gate!");
+        }
     }
 
     void RightOrWrong()
     {
-        //checks item information to see if matching (use id number)
+        if(testingHead != null)
+        {
+            Debug.Log("Matching...");
+            if(testingHead.GetComponent<Item>().item.id != matchingID)
+            {
+                Debug.Log("Not matching!");
+                Destroy(testingHead);
+            }
+            if (testingHead.GetComponent<Item>().item.id == matchingID)
+            {
+                Debug.Log("Matching!");
+                matchingPiece = true;
+                doorOpen();
+            }
+        }
+
     }
 
     public void placement()
     {
         Debug.Log(Selection.currentItem);
-        Instantiate(Selection.currentItem, Head.transform.position, Quaternion.identity);
+        testingHead = Instantiate(Selection.currentItem, Head.transform.position, Quaternion.identity);
         selector.unequip();
+        RightOrWrong();
     }
-    
+
+    IEnumerator LowerGate()
+    {
+        Vector3 startPos = MazeDoor.transform.position;
+        Debug.Log(startPos);
+        Vector3 endPos = startPos + (Vector3.down * 25f);
+        Debug.Log(endPos);
+        float duration = 3f;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            MazeDoor.transform.position = Vector3.Lerp(startPos, endPos, elapsed / duration);
+            elapsed += Time.deltaTime;
+            Debug.Log("Door down!");
+            yield return null;
+        }
+
+        MazeDoor.transform.position = endPos;
+    }
 }

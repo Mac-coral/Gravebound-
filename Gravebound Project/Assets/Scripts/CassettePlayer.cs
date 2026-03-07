@@ -43,7 +43,7 @@ public class CassettePlayer : MonoBehaviour
     System.Collections.IEnumerator LowerGate()
     {
         Vector3 startPos = mazeGate.transform.position;
-        Vector3 endPos = startPos + Vector3.down * 5f;
+        Vector3 endPos = startPos + Vector3.down * 25f;
         float duration = 2f;
         float elapsed = 0f;
 

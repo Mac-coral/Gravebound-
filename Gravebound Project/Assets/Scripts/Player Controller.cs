@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask inventItem;
     public LayerMask puzzle;
 
+    public GameObject cassettePlay;
     public CassettePlayer cassettePlayer;
 
     private Material ogMat;
@@ -62,11 +63,11 @@ public class PlayerController : MonoBehaviour
                 inventory.AddItem(_item.item); 
                 Destroy(touch.collider.gameObject);
                 Debug.Log("Item picked up "+ _item.name); 
-
                 
-               if (cassettePlayer != null && _item.item.itemName == "Cassette Tape")
+               if ( _item.item.itemName == "Cassette Tape")
                {
                     cassettePlayer.InsertCassette(_item);
+                    Debug.Log("Cassette Tape in!");
                }
                 
             }
